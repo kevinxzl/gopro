@@ -6,6 +6,8 @@ func updateSlice(s []int) {
 	s[0] = 10
 	s[1] = 100
 	s[2] = 200
+	s = append(s, 8899)
+	fmt.Println("IN updateSlice", s)
 }
 
 func main() {
@@ -17,13 +19,15 @@ func main() {
 	fmt.Println("arr[2:]=", arr[2:])
 	fmt.Println("arr[:]=", arr[:])
 
+
 	fmt.Println("Test Case2")
-	s1 := arr[:]
-	fmt.Printf("s1=%v, len(s1)=%d, cap(s1)=%d\n", s1, len(s1), cap(s1))
-	updateSlice(s1)
+	s2a := arr[:]
+	fmt.Printf("s2a=%v, len(s2a)=%d, cap(s2a)=%d\n", s2a, len(s2a), cap(s2a))
+	updateSlice(s2a)
 	fmt.Println("after update slice:", arr)
-	s2 := arr[3:6]
-	fmt.Printf("s2=%v, len(s2)=%d, cap(s2)=%d\n", s2, len(s2), cap(s2))
+	s2b := arr[3:6]
+	fmt.Printf("s2b=arr[3:6]=%v, len(s2b)=%d, cap(s2b)=%d\n", s2b, len(s2b), cap(s2b))
+
 	fmt.Println("Test Case3")
 	s3a := arr[2:6]
 	s3b := s3a[3:5]
